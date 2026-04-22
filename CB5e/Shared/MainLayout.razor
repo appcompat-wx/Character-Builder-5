@@ -1,0 +1,38 @@
+﻿@inherits LayoutComponentBase
+<div class="page">
+	<div class="sidebar">
+		<NavMenu />
+	</div>
+
+	<main>
+		<div class="top-row ps-1 pe-2 auth bg-body-tertiary">
+			<div class="row g-1 w-100">
+				<div class="col order-sm-0">
+					<div class="btn-group">
+						<Undo CssClass="btn btn-outline-primary bi bi-arrow-counterclockwise" />
+						<Redo CssClass="btn btn-outline-primary bi bi-arrow-clockwise" />
+					</div>
+				</div>
+				<div class="col-auto order-sm-1">
+					<NewPlayer CssClass="btn btn-primary bi bi-person-plus-fill" />
+				</div>
+				<div class="col-auto order-sm-3">
+					<SavePlayer CssClass="btn btn-primary bi bi-cloud-download" />
+				</div>
+				<div class="col-auto order-sm-4">
+					<button class="btn btn-outline-primary bi bi-printer print-button" onclick="if (document.documentElement.getAttribute('id') == 'print') {document.documentElement.setAttribute('id',''); var elements = document.getElementsByClassName('scale'); for (let i = 0; i < elements.length; i++) {elements[i].style = '';}} else {document.documentElement.setAttribute('id','print'); var elements = document.getElementsByClassName('scale'); for (let i = 0; i < elements.length; i++) {for(let j=1; j<20; j++) {if (elements[i].clientHeight < elements[i].scrollHeight) {var size = 1-(j*0.05);elements[i].style.fontSize = size + 'em';elements[i].style.lineHeigt = size + 'em';}}}}; " />
+				</div>
+				<div class="col-auto order-sm-5">
+					<button class="btn btn-outline-primary bi bi-lightbulb" onclick="if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {document.documentElement.setAttribute('data-bs-theme','light')} else {document.documentElement.setAttribute('data-bs-theme','dark')}" />
+				</div>
+				<div class="col-12 col-sm-auto order-sm-2">
+					<LoadPlayer CssClass="btn btn-primary p20rem w-100" />
+				</div>
+			</div>
+		</div>
+
+		<article class="content px-4">
+			@Body
+		</article>
+	</main>
+</div>

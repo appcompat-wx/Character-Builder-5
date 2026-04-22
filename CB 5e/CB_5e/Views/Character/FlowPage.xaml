@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CB_5e.Views.Character.FlowPage"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             Title="{Binding Name}">
+    <ContentPage.Content>
+        <StackLayout>
+            <flv:FlowListView FlowColumnMinWidth="150" SeparatorVisibility="Default" HasUnevenRows="false"
+                              FlowItemTapped="FlowListView_FlowItemTapped"
+                              FlowColumnExpand="None"
+	FlowItemsSource="{Binding SubPages}" RowHeight="160">
+
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <Grid Padding="5, 15, 5, 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" Source="{Binding Image}" Aspect="AspectFit"/>
+                            <Label HorizontalTextAlignment="Center" Grid.Row="1" Text="{Binding Title}"/>
+                        </Grid>
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+
+            </flv:FlowListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

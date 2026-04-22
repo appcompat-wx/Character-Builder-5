@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CB_5e.Views.Character.JournalEntryPage"
+             Title="{Binding Added}">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="50*"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Title: " HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" Text="{Binding Title}" TextColor="{StaticResource Accent}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Text="Description: " HorizontalTextAlignment="Center" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Editor Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" Text="{Binding Text}" VerticalOptions="FillAndExpand" TextColor="{StaticResource Accent}"/>
+
+                
+                <Label Grid.Row="3" Grid.Column="0" Text="Session" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="3" Grid.Column="1" Text="{Binding Session}" TextColor="{StaticResource Accent}"/>
+                <Label Grid.Row="3" Grid.Column="2" Text="Place/Time" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="3" Grid.Column="3" Text="{Binding Time}" TextColor="{StaticResource Accent}"/>
+                <DatePicker Date="{Binding Date}" Format = "d" Grid.Row="3" Grid.Column="4" TextColor="{StaticResource Accent}"/>
+                <TimePicker Time="{Binding AddedTime}" Grid.Row="3" Grid.Column="5" TextColor="{StaticResource Accent}" />
+
+
+                <Label Grid.Row="4" Grid.Column="0" Text="DM + DCI" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding DM}" TextColor="{StaticResource Accent}"/>
+                <Label Grid.Row="4" Grid.Column="4" Text="On Sheet" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Switch  Grid.Row="4" Grid.Column="5" IsToggled="{Binding InSheet}" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                <Label Grid.Row="5" Grid.Column="0" Text="XP" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="5" Grid.Column="1" Text="{Binding XP}" TextColor="{StaticResource Accent}" Keyboard="Telephone"/>
+                <Label Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="1"  Text="Adv. ChP." HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="5" Grid.Column="3" Text="{Binding AP}" TextColor="{StaticResource Accent}" Keyboard="Telephone"/>
+                <Label Grid.Row="5" Grid.Column="4" Text="Milestone" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Switch  Grid.Row="5" Grid.Column="5" IsToggled="{Binding Milestone}" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+
+                <Label Grid.Row="6" Grid.Column="0" Text="PP" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="6" Grid.Column="1" Text="{Binding PP}" TextColor="{StaticResource Accent}" Keyboard="Telephone"/>
+                <Label Grid.Row="6" Grid.Column="2" Text="GP" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="6" Grid.Column="3" Text="{Binding GP}" TextColor="{StaticResource Accent}" Keyboard="Telephone"/>
+                <Label Grid.Row="6" Grid.Column="4" Text="EP" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="6" Grid.Column="5" Text="{Binding EP}" TextColor="{StaticResource Accent}" Keyboard="Telephone"/>
+                
+                <Label Grid.Row="7" Grid.Column="0" Text="SP" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="7" Grid.Column="1" Text="{Binding SP}" TextColor="{StaticResource Accent}" Keyboard="Telephone"/>
+                <Label Grid.Row="7" Grid.Column="2" Text="CP" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="7" Grid.Column="3" Text="{Binding CP}" TextColor="{StaticResource Accent}" Keyboard="Telephone"/>
+                <Label Grid.Row="7" Grid.Column="4" Text="Tier 1 TP" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="7" Grid.Column="5" Text="{Binding T1TP}" TextColor="{StaticResource Accent}" Keyboard="Telephone"/>
+
+                <Label Grid.Row="8" Grid.Column="0" Text="Tier 2 TP" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="8" Grid.Column="1" Text="{Binding T2TP}" TextColor="{StaticResource Accent}" Keyboard="Telephone"/>
+                <Label Grid.Row="8" Grid.Column="2" Text="Tier 3 TP" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="8" Grid.Column="3" Text="{Binding T3TP}" TextColor="{StaticResource Accent}" Keyboard="Telephone"/>
+                <Label Grid.Row="8" Grid.Column="4" Text="Tier 4 TP" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="8" Grid.Column="5" Text="{Binding T4TP}" TextColor="{StaticResource Accent}" Keyboard="Telephone"/>
+
+
+                <Label Grid.Row="9" Grid.Column="0" Text="Magic Items" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="9" Grid.Column="1" Text="{Binding MagicItems}" TextColor="{StaticResource Accent}" Keyboard="Telephone"/>
+                <Label Grid.Row="9" Grid.Column="2" Text="Renown" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="9" Grid.Column="3" Text="{Binding Renown}" TextColor="{StaticResource Accent}" Keyboard="Telephone"/>
+                <Label Grid.Row="9" Grid.Column="4" Text="Downtime" HorizontalTextAlignment="End" FontSize="Micro" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="9" Grid.Column="5" Text="{Binding Downtime}" TextColor="{StaticResource Accent}" Keyboard="Telephone"/>
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
