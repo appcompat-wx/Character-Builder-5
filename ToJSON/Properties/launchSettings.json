@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "ToJSON": {
-      "commandName": "Project",
-      "commandLineArgs": "\"d:\\Dropbox\\CB5 Characters\\Vexa.cb5\"",
-      "workingDirectory": "D:\\Dropbox\\CB5 - Full"
-    }
-  }
-}

@@ -1,9 +1,0 @@
-﻿::deep textarea::first-line {
-    font-weight: bold;
-}
-
-
-::first-line {
-    font-weight: bold !important;
-}
-
