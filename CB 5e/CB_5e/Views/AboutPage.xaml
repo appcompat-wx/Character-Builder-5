@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CB_5e.Views.AboutPage"
+             xmlns:vm="clr-namespace:CB_5e.ViewModels;"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <Label TextColor="{StaticResource Primary}" FontSize="Large" Text="Character Builder 5" />
+            <StackLayout Orientation="Horizontal">
+                <Label HorizontalOptions="FillAndExpand" Text="Auto Save in Play Mode"/>
+                <Switch IsToggled="{Binding AutoSave}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label HorizontalOptions="FillAndExpand" Text="Hide Lost Items"/>
+                <Switch IsToggled="{Binding HideLost}"/>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout>
+                <Label TextColor="{StaticResource Primary}" Text="A few notes on editing files:" FontSize="Large" />
+                <Label>
+                    <Label.Text>What is a character, if not a lousy bag of choices?
+That was the driving force behind the design of this builder, a character being nothing but collection of choices (classes, race, background, name, personal info, pictures, items). Some choices however result in more choices however, like some races require a subrace, some classes a subclass, there are spells to select as well. 
+And then there are even more specific choices to consider, depending on the race/class/background that they come from. Those choices are saved under a unique ID in the file as well.</Label.Text>
+                </Label>
+                <Label>
+                    <Label.Text>What is a race, class or background in 5e? Nothing but a list of features and descriptions. Descriptions are optional fluff and features define what the character does when being played. This character builder also includes the full editing suite to add any published class, race, background so far (year 2017).
+While most features are just simple name + text affairs, or maybe a resource counter, some require a bit more support. There are specialized features for spellcasting systems, bonus spells, proficiencies, saves, and other stats and of course creating more choices to select proficiencies, spells and even other features.</Label.Text>
+                </Label>
+                <Label TextColor="{StaticResource Primary}" Text="About NCalc:" FontSize="Medium" />
+                <Label>
+                    <Label.Text>NCalc is used for all conditions and calculations, the expression are usually straight forward and examples can be found in the included files. The conditions are mostly based on keywords, the expression "Weapon and Ranged" would match all weapons with the ranged keyword. A damage bonus of "Max(Floor(WisMod/2), 1) will add half your Wisdom modifier, with a minimum of 1.</Label.Text>
+                </Label>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
